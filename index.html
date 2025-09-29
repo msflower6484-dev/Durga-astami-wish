@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शुभ अष्टमी!</title>
+    <!-- Google Fonts for a festive look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* थीम के रंग */
+        :root {
+            --primary-color: #880E4F; /* गहरा मैरून */
+            --secondary-color: #FFC107; /* एम्बर गोल्ड */
+            --accent-color: #D81B60; /* गहरा गुलाबी */
+            --background-start: #ffe0b2; /* हल्का पीच */
+            --background-end: #ffcc80; /* हल्का नारंगी */
+            --text-color: #4A148C; /* गहरा बैंगनी */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end)); /* धार्मिक ग्रेडिएंट बैकग्राउंड */
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-x: hidden; /* क्षैतिज स्क्रॉलिंग रोकें */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.98); /* थोड़ा पारदर्शी सफेद */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* गहरा शैडो */
+            max-width: 90%;
+            width: 550px;
+            margin-top: 20px;
+            border: 3px solid var(--secondary-color); /* सुनहरी बॉर्डर */
+            position: relative;
+            z-index: 10; /* आतिशबाजी के ऊपर */
+        }
+
+        #durgagif {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            animation: imagePulse 2s infinite ease-in-out; /* इमेज एनिमेशन */
+            position: relative; /* आतिशबाजी के लिए */
+            z-index: 5; /* कंटेनर के अंदर आतिशबाजी के ऊपर */
+        }
+
+        /* इमेज पल्स एनिमेशन */
+        @keyframes imagePulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #astamiMessage {
+            font-family: 'Charm', cursive;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #greetingMessage {
+            font-family: 'Charm', cursive; /* सजावटी फ़ॉन्ट */
+            font-size: 3em; /* बड़ा फ़ॉन्ट आकार */
+            font-weight: bold;
+            color: var(--primary-color); /* गहरा मैरून */
+            margin-bottom: 25px;
+            opacity: 0; /* शुरू में छिपा हुआ */
+            transform: translateY(30px) scale(0.9);
+            animation: fadeInScaleUp 1.8s forwards ease-out; /* धीमा, सुंदर एनिमेशन */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* टेक्स्ट शैडो */
+        }
+
+        #nameInputBox {
+            margin-top: 20px;
+            width: calc(100% - 20px);
+            padding: 14px;
+            border: 2px solid var(--secondary-color); /* सुनहरी बॉर्डर */
+            border-radius: 8px;
+            font-size: 1.1em;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #nameInputBox:focus {
+            border-color: var(--primary-color); /* फोकस पर गहरा मैरून */
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        #shareWhatsappMainBtn { /* इस बटन का स्टाइल */
+            background-color: #25D366; /* WhatsApp हरा */
+            color: white;
+            border: none;
+            padding: 15px 30px; /* थोड़ा बड़ा पैडिंग */
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.3em; /* बड़ा फ़ॉन्ट आकार */
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex; /* आइकन और टेक्स्ट को संरेखित करने के लिए */
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* आइकन और टेक्स्ट के बीच की दूरी */
+            width: calc(100% - 20px); /* इनपुट बॉक्स के समान चौड़ाई */
+            max-width: 300px; /* अधिकतम चौड़ाई */
+        }
+
+        #shareWhatsappMainBtn i {
+            font-size: 1.4em; /* आइकन का आकार */
+        }
+
+        #shareWhatsappMainBtn:hover {
+            background-color: #1DA851; /* होवर पर गहरा हरा */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #generatedLinkContainer {
+            margin-top: 25px;
+            font-size: 1em;
+            word-break: break-all;
+            background-color: var(--background-start); /* लिंक के लिए हल्का पीच बैकग्राउंड */
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px dashed var(--primary-color);
+            color: var(--text-color);
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+            display: none; /* शुरू में छिपा हुआ */
+            flex-direction: column;
+            gap: 15px; /* बटन और टेक्स्ट के बीच की दूरी */
+            align-items: center;
+        }
+
+        #generatedLinkContainer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #generatedLinkContainer a:hover {
+            text-decoration: underline;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column; /* बटन को एक के नीचे एक रखें */
+            gap: 10px;
+            width: 100%; /* पूरी चौड़ाई लें */
+            max-width: 300px; /* अधिकतम चौड़ाई */
+            margin-top: 10px;
+        }
+
+        .copy-button {
+            width: 100%; /* बटन पूरी चौड़ाई लें */
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: white; /* टेक्स्ट कलर व्हाइट */
+            background-color: #4CAF50; /* हरा कॉपी बटन */
+            display: flex; /* आइकन और टेक्स्ट को संरेखित करने के लिए */
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* आइकन और टेक्स्ट के बीच की दूरी */
+        }
+
+        .copy-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* बधाई संदेश के लिए एनिमेशन */
+        @keyframes fadeInScaleUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* आतिशबाजी प्रभाव के लिए CSS */
+        .firecracker-container {
+            position: fixed; /* पूरे व्यूपोर्ट को कवर करने के लिए */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* क्लिक्स को नीचे के तत्वों तक जाने देता है */
+            overflow: hidden; /* स्पार्क्स को कंटेनर के अंदर रखता है */
+            z-index: 99; /* अन्य सभी तत्वों के ऊपर */
+        }
+
+        .spark {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            animation: firecrackerSpark 1.5s forwards ease-out; /* स्पार्क एनिमेशन */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* चमक के लिए शैडो */
+        }
+
+        @keyframes firecrackerSpark {
+            0% {
+                opacity: 1;
+                transform: scale(0.2) translate(0, 0); /* छोटे से शुरू करें */
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1) translate(var(--dx), var(--dy)); /* बाहर की ओर बढ़ें */
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translate(var(--dx), var(--dy)); /* फीका पड़ कर गायब हो जाएं */
+            }
+        }
+
+        /* Adsterra बैनर के लिए स्टाइल */
+        #adsterra-banner {
+            margin-top: 30px; /* कंटेनर से थोड़ी दूरी */
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center; /* सेंटर में अलाइन करें */
+            align-items: center;
+            width: 100%;
+            min-height: 60px; /* विज्ञापन की ऊँचाई के अनुसार */
+            background-color: rgba(255, 255, 255, 0.5); /* हल्का पारदर्शी बैकग्राउंड */
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- आतिशबाजी के लिए कंटेनर -->
+    <div class="firecracker-container" id="fireworks-container"></div>
+
+    <div class="container">
+        <!-- यहाँ आपकी durgagif.Jpg इमेज आएगी। -->
+        <!-- आप इसे Base64 इनकोड करके सीधे src में डाल सकते हैं
+             या यदि इमेज आपके GitHub रिपोजिटरी में है तो उसका रिलेटिव पाथ दे सकते हैं।
+             उदाहरण के लिए: <img id="durgagif" src="durgagif.Jpg" alt="Durga Puja">
+             Base64 के लिए, src ऐसा दिखेगा: data:image/jpeg;base64,YOUR_BASE64_STRING_HERE -->
+        <img id="durgagif" src="durgagif.Jpg" alt="Durga Puja"> 
+
+        <!-- अष्टमी के बारे में अच्छी बात -->
+        <div id="astamiMessage">
+            माँ दुर्गा का आठवां स्वरूप, महागौरी, आपकी सभी इच्छाएं पूर्ण करें। शुभ अष्टमी की हार्दिक शुभकामनाएं!
+        </div>
+
+        <div id="greetingMessage"></div>
+
+        <input type="text" id="nameInputBox" placeholder="अपना नाम यहाँ टाइप करें">
+        <button id="shareWhatsappMainBtn"><i class="fab fa-whatsapp"></i> WhatsApp पर शेयर करें</button>
+
+        <div id="generatedLinkContainer"></div>
+    </div>
+
+    <!-- Adsterra Ad Code Start -->
+    <div id="adsterra-banner">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'f6f2bcebe2e8b1015cf2a753a54c0061',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/f6f2bcebe2e8b1015cf2a753a54c0061/invoke.js"></script>
+    </div>
+    <!-- Adsterra Ad Code End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const greetingMessage = document.getElementById('greetingMessage');
+            const astamiMessage = document.getElementById('astamiMessage');
+            const nameInputBox = document.getElementById('nameInputBox');
+            const shareWhatsappMainBtn = document.getElementById('shareWhatsappMainBtn');
+            const generatedLinkContainer = document.getElementById('generatedLinkContainer');
+            const durgagif = document.getElementById('durgagif');
+            const fireworksContainer = document.getElementById('fireworks-container');
+            const adsterraBanner = document.getElementById('adsterra-banner');
+
+            // URL से 'sender' पैरामीटर को प्राप्त करें
+            const urlParams = new URLSearchParams(window.location.search);
+            const senderName = urlParams.get('sender');
+
+            if (senderName) {
+                // अगर senderName है, तो बधाई संदेश दिखाएं और अष्टमी संदेश को छिपाएं
+                const decodedSenderName = decodeURIComponent(senderName); // URL से नाम को डिकोड करें
+                greetingMessage.innerHTML = `शुभ अष्टमी from ${decodedSenderName}!`;
+                greetingMessage.style.opacity = 1;
+                greetingMessage.style.transform = 'translateY(0) scale(1)';
+                document.title = `शुभ अष्टमी - ${decodedSenderName}`;
+                astamiMessage.style.display = 'none'; // अष्टमी संदेश छिपाएं
+                nameInputBox.style.display = 'none'; // नाम इनपुट बॉक्स छिपाएं
+                shareWhatsappMainBtn.style.display = 'none'; // नया शेयर बटन छिपाएं
+                adsterraBanner.style.display = 'none'; // Adsterra बैनर को छिपाएं जब शुभकामना पेज दिखे
+
+                // बधाई संदेश दिखने के थोड़ी देर बाद आतिशबाजी शुरू करें
+                setTimeout(() => {
+                    createMultipleFirecrackers(); // सामान्य पृष्ठभूमि आतिशबाजी
+                    createImageFirecrackers(durgagif); // इमेज पर केंद्रित आतिशबाजी
+                }, 500); 
+            } else {
+                // अगर senderName नहीं है, तो बधाई संदेश छिपा दें और इनपुट/बटन दिखाएं
+                greetingMessage.style.display = 'none';
+                astamiMessage.style.display = 'block'; // अष्टमी संदेश दिखाएं
+                adsterraBanner.style.display = 'flex'; // Adsterra बैनर को दिखाएं जब इनपुट पेज दिखे
+            }
+
+            shareWhatsappMainBtn.addEventListener('click', async () => {
+                const userName = nameInputBox.value.trim();
+
+                if (userName) {
+                    // पहले लिंक जनरेट करें
+                    const currentUrl = window.location.origin + window.location.pathname;
+                    const shareableLink = `${currentUrl}?sender=${encodeURIComponent(userName)}`;
+                    
+                    const shareTitle = `शुभ अष्टमी from ${userName}!`;
+                    const shareText = `${userName} ने आपको दुर्गा पूजा की हार्दिक शुभकामनाएं भेजी हैं! इस लिंक पर क्लिक करें: ${shareableLink}`;
+
+                    // शेयरिंग एक्शन
+                    if (navigator.share) {
+                        try {
+                            await navigator.share({
+                                title: shareTitle,
+                                text: shareText,
+                                url: shareableLink
+                            });
+                            console.log('Link shared successfully via Web Share API!');
+                        } catch (error) {
+                            console.error('Error sharing the link via Web Share API:', error);
+                            // अगर Web Share API फेल हो, तो WhatsApp फॉलबैक का उपयोग करें
+                            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+                            window.open(whatsappUrl, '_blank');
+                        }
+                    } else {
+                        // Web Share API उपलब्ध नहीं है तो WhatsApp वेब/ऐप के लिए फॉलबैक
+                        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+                        window.open(whatsappUrl, '_blank');
+                    }
+
+                    // शेयरिंग एक्शन के बाद, जनरेटेड लिंक और कॉपी बटन दिखाएं
+                    generatedLinkContainer.style.display = 'flex'; 
+                    generatedLinkContainer.innerHTML = ''; 
+
+                    const linkDisplayDiv = document.createElement('div');
+                    linkDisplayDiv.innerHTML = `आपका लिंक जनरेट हो गया है:<br><a href="${shareableLink}" target="_blank" rel="noopener noreferrer">${shareableLink}</a>`;
+                    linkDisplayDiv.style.marginBottom = '15px'; 
+                    generatedLinkContainer.appendChild(linkDisplayDiv);
+                    
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.className = 'action-buttons';
+                    generatedLinkContainer.appendChild(buttonContainer);
+
+                    const copyButton = document.createElement('button');
+                    copyButton.textContent = 'लिंक कॉपी करें';
+                    copyButton.className = 'copy-button';
+                    buttonContainer.appendChild(copyButton);
+
+                    copyButton.addEventListener('click', () => {
+                        navigator.clipboard.writeText(shareableLink).then(() => {
+                            alert('लिंक कॉपी हो गया है!');
+                        }).catch(err => {
+                            console.error('लिंक कॉपी करने में विफल:', err);
+                        });
+                    });
+                    
+                    // शेयर करने के बाद Adsterra बैनर को भी छिपा दें, क्योंकि मुख्य क्रिया पूरी हो गई है
+                    adsterraBanner.style.display = 'none';
+
+                } else {
+                    generatedLinkContainer.style.display = 'flex';
+                    generatedLinkContainer.innerHTML = '<span style="color: var(--primary-color);">कृपया अपना नाम दर्ज करें।</span>';
+                }
+            });
+
+            // आतिशबाजी प्रभाव के लिए फ़ंक्शन
+            function createSpark(x, y) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                
+                const size = Math.random() * 8 + 5;
+                spark.style.width = `${size}px`;
+                spark.style.height = `${size}px`;
+                
+                const offsetX = (Math.random() - 0.5) * 40;
+                const offsetY = (Math.random() - 0.5) * 40;
+                spark.style.left = `${x + offsetX}px`;
+                spark.style.top = `${y + offsetY}px`;
+                
+                const hue = Math.random() * 60;
+                const saturation = Math.random() * 20 + 80;
+                const lightness = Math.random() * 20 + 60;
+                spark.style.background = `radial-gradient(circle at center, hsl(${hue}, ${saturation}%, ${lightness}%) 0%, transparent 70%)`;
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 100 + 50;
+                const dx = Math.cos(angle) * distance;
+                const dy = Math.sin(angle) * distance;
+                
+                spark.style.setProperty('--dx', `${dx}px`);
+                spark.style.setProperty('--dy', `${dy}px`);
+                
+                spark.style.animationDelay = `${Math.random() * 0.5}s`;
+
+                fireworksContainer.appendChild(spark);
+
+                spark.addEventListener('animationend', () => {
+                    spark.remove();
+                });
+            }
+
+            function createFirecrackerExplosion(x, y, count = 30) {
+                for (let i = 0; i < count; i++) {
+                    createSpark(x, y);
+                }
+            }
+
+            // इमेज के आसपास आतिशबाजी के लिए नया फंक्शन
+            function createImageFirecrackers(imageElement) {
+                const imgRect = imageElement.getBoundingClientRect();
+                const centerX = imgRect.left + imgRect.width / 2;
+                const centerY = imgRect.top + imgRect.height / 2;
+
+                const numBursts = 2; // इमेज पर धमाकों की संख्या
+                for (let i = 0; i < numBursts; i++) {
+                    const randomOffsetX = (Math.random() - 0.5) * imgRect.width * 0.4; // इमेज के 40% चौड़ाई के भीतर
+                    const randomOffsetY = (Math.random() - 0.5) * imgRect.height * 0.4; // इमेज के 40% ऊंचाई के भीतर
+
+                    setTimeout(() => {
+                        createFirecrackerExplosion(centerX + randomOffsetX, centerY + randomOffsetY, 25); // इमेज पर 25 स्पार्क
+                    }, i * 400 + Math.random() * 200); // छोटे अंतराल पर धमाके
+                }
+            }
+
+            function createMultipleFirecrackers() {
+                const numBursts = 3;
+
+                for (let i = 0; i < numBursts; i++) {
+                    const randomX = Math.random() * (window.innerWidth - 100) + 50;
+                    const randomY = Math.random() * (window.innerHeight * 0.6) + 50;
+                    
+                    const burstDelay = i * 800 + Math.random() * 500;
+                    
+                    setTimeout(() => {
+                        createFirecrackerExplosion(randomX, randomY, 40);
+                    }, burstDelay);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
